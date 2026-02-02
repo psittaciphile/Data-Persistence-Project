@@ -1165,9 +1165,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1546295582}
   - component: {fileID: 1546295583}
+  - component: {fileID: 1546295584}
   m_Layer: 5
   m_Name: Text Area
-  m_TagString: Untagged
+  m_TagString: Name
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1207,6 +1208,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RectMask2D
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &1546295584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546295581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211efc7a1ae1d51498654e1fbca9f80d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NameText
 --- !u!1 &1570245528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1593,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1867753385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1322447955}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1867753385
 MonoBehaviour:
   m_ObjectHideFlags: 0
