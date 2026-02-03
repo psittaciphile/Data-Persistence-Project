@@ -1003,6 +1003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1191b46602ab47d40a67228ea2b34474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+  canvas: {fileID: 1137697815}
+  nameText: 
+  nameField: {fileID: 1098096077}
 --- !u!4 &1322447956
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,7 +1168,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1546295582}
   - component: {fileID: 1546295583}
-  - component: {fileID: 1546295584}
   m_Layer: 5
   m_Name: Text Area
   m_TagString: Name
@@ -1208,18 +1210,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RectMask2D
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
---- !u!114 &1546295584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546295581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211efc7a1ae1d51498654e1fbca9f80d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NameText
 --- !u!1 &1570245528
 GameObject:
   m_ObjectHideFlags: 0
