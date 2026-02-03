@@ -33,6 +33,7 @@ public class MenuManager : MonoBehaviour
     public void getName(string x)
     {
         nameText = x;
+        SaveManager.UserName = nameText;
         Debug.Log(x);
     }
 }
