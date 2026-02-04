@@ -9,11 +9,15 @@ public class MenuManager : MonoBehaviour
     public Canvas canvas;
     public string nameText;
     public TMP_InputField nameField;
+    public string scoreText;
+    public TMP_Text scoreField;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         nameField.onEndEdit.AddListener(getName);
+        SaveManager.Instance.LoadHighScores();
+        setScore();
     }
 
     public void StartGame()
@@ -33,7 +37,12 @@ public class MenuManager : MonoBehaviour
     public void getName(string x)
     {
         nameText = x;
-        SaveManager.UserName = nameText;
-        Debug.Log(x);
+        SaveManager.CurrentName = nameText;
+    }
+
+    public void setScore()
+    {
+        scoreText = "High Score: " + SaveManager.Score;
+        scoreField.text = scoreText;
     }
 }

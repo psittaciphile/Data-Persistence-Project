@@ -19,8 +19,7 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
-    private string UserName;
-    private int HighScore;
+    private string CurrentName;
 
     
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class MainManager : MonoBehaviour
     {
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
-        UserName = SaveManager.UserName;
+        CurrentName = SaveManager.CurrentName;
         
         int[] pointCountArray = new [] {1,1,2,2,5,5};
         for (int i = 0; i < LineCount; ++i)
@@ -41,6 +40,9 @@ public class MainManager : MonoBehaviour
                 brick.onDestroyed.AddListener(AddPoint);
             }
         }
+
+        SetHighScore();
+        Debug.Log("Game Start UserName: " + SaveManager.UserName);
     }
 
     private void Update()
@@ -62,7 +64,9 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                Debug.Log("Game Over UserName:"+ SaveManager.UserName);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Debug.Log("Is this executed?");
             }
         }
     }
@@ -78,9 +82,24 @@ public class MainManager : MonoBehaviour
         m_GameOver = true;
         GameOverText.SetActive(true);
 
-        if(SaveManager.Score < m_Points)
+        SaveManager.Instance.LoadHighScores();
+
+        SetHighScore();
+
+    }
+
+    public void SetHighScore()
+    {
+        if (SaveManager.Score < m_Points)
         {
-            HighScoreText.text = "Best Score: " + m_Points.ToString() + " Name: " + UserName;
+            HighScoreText.text = "Best Score: " + m_Points.ToString() + " Name: " + CurrentName;
+            SaveManager.Score = m_Points;
+            SaveManager.Instance.SaveScore();
+            SaveManager.Instance.LoadHighScores();
+        }
+        else
+        {
+            HighScoreText.text = "Best Score: " + SaveManager.Score + " Name: " + SaveManager.UserName;
         }
     }
 }

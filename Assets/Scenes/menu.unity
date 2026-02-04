@@ -422,7 +422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e320f47b24fe4ec4cbb199170daffa6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveManager
-  Score: 0
 --- !u!4 &778017726
 Transform:
   m_ObjectHideFlags: 0
@@ -1051,6 +1050,8 @@ MonoBehaviour:
   canvas: {fileID: 1137697815}
   nameText: 
   nameField: {fileID: 1098096077}
+  scoreText: 
+  scoreField: {fileID: 624045240}
 --- !u!4 &1322447956
 Transform:
   m_ObjectHideFlags: 0
